@@ -58,7 +58,16 @@ const RecipeCard = ({ recipe = {} }) => {
                     }}
                 ></CardMedia>
                 <CardContent>
-                    <Typography variant="h5">{recipe.title}</Typography>
+                    <Typography
+                        variant="h5"
+                        sx={{
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                        }}
+                    >
+                        {recipe.title}
+                    </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {recipe.description}
                     </Typography>
