@@ -233,7 +233,7 @@ const General = ({ user }) => {
                             <LocalizationProvider dateAdapter={AdapterMoment}>
                                 <DatePicker
                                     {...field}
-                                    label="Date"
+                                    label="Birth date"
                                     renderInput={(params) => (
                                         <TextField
                                             {...params}
