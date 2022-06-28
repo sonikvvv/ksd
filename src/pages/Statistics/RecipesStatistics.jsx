@@ -80,7 +80,7 @@ const RecipesStatistics = () => {
                 data = await axiosFetch({ url: '/statistics/months' });
             }
 
-            setRecipes(data);
+            setRecipes(data || []);
         };
 
         getWeek();
@@ -89,17 +89,6 @@ const RecipesStatistics = () => {
     const handleTimePeriodChange = async (event) => {
         const value = event.target.value;
         setTimePeriod(value);
-
-        let data = [];
-        if (value === 1) {
-            data = await axiosFetch({ url: '/statistics/week' });
-        } else if (value === 2) {
-            data = await axiosFetch({ url: '/statistics/month' });
-        } else if (value === 3) {
-            data = await axiosFetch({ url: '/statistics/months' });
-        }
-
-        setRecipes(data);
     };
 
     return (

@@ -26,7 +26,9 @@ const ThreeMonthStatistics = () => {
         const getWeek = async () => {
             const data = await axiosFetch({ url: '/statistics/months' });
 
-            setRecipes(data.slice(0, 6));
+            console.log(data);
+
+            setRecipes(data?.slice(0, 6));
         };
 
         getWeek();

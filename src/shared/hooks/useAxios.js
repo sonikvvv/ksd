@@ -80,7 +80,7 @@ const useAxios = () => {
 
                 return res.data;
             } catch (err) {
-                console.log(err.massage);
+                console.log(err);
 
                 setError(err?.response?.data || { message: err.massage });
             } finally {

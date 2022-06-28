@@ -31,7 +31,7 @@ const defaultOptions = {
     plugins: {
         tooltip: {
             callbacks: {
-                title: (context) => context[0].label.replaceAll(',', ' '),
+                title: (context) => context[0]?.label?.replaceAll(',', ' '),
             },
         },
     },
@@ -42,7 +42,7 @@ const BarChart = ({ options = defaultOptions, data = [], title, subtitle }) => {
     const theme = useTheme();
 
     useEffect(() => {
-        setBarData(data);
+        setBarData(data || []);
     }, [data]);
 
     if (theme.palette.mode === 'dark') {
@@ -95,8 +95,8 @@ const BarChart = ({ options = defaultOptions, data = [], title, subtitle }) => {
                             ...barData?.map((item) => {
                                 const title = item?.recipe?.title;
 
-                                return title.length > 20
-                                    ? title.split(' ')
+                                return title?.length > 20
+                                    ? title?.split(' ')
                                     : title;
                             }),
                         ],
@@ -106,7 +106,7 @@ const BarChart = ({ options = defaultOptions, data = [], title, subtitle }) => {
                                 label: 'Old value',
                                 borderWidth: 2,
                                 fill: true,
-                                data: barData?.map((item) => item.oldValue),
+                                data: barData?.map((item) => item?.oldValue),
                                 borderColor:
                                     theme.palette.mode === 'light'
                                         ? theme.palette.secondary.light
@@ -119,7 +119,7 @@ const BarChart = ({ options = defaultOptions, data = [], title, subtitle }) => {
                             {
                                 type: 'bar',
                                 label: 'New value',
-                                data: barData?.map((item) => item.newValue),
+                                data: barData?.map((item) => item?.newValue),
                                 backgroundColor:
                                     theme.palette.mode === 'light'
                                         ? theme.palette.primary.light
