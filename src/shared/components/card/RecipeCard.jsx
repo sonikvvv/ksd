@@ -68,9 +68,6 @@ const RecipeCard = ({ recipe = {} }) => {
                     >
                         {recipe.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {recipe.description}
-                    </Typography>
                 </CardContent>
                 <CardActions>
                     <Typography variant="body2" color="text.secondary" pl={1}>

@@ -34,7 +34,16 @@ const StatisticsCard = ({ data }) => {
                     justifyContent: 'space-between',
                 }}
             >
-                <Typography variant="h5">{data?.recipe?.title}</Typography>
+                <Typography
+                    variant="h5"
+                    sx={{
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                    }}
+                >
+                    {data?.recipe?.title}
+                </Typography>
                 <Avatar
                     sx={{
                         backgroundColor: (theme) =>
