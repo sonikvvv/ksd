@@ -1,29 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import {
-    Chart as ChartJS,
-    LinearScale,
-    CategoryScale,
-    BarElement,
-    PointElement,
-    LineElement,
-    Legend,
-    Tooltip,
-} from 'chart.js/auto';
-import { Chart } from 'react-chartjs-2';
+import Chart from 'chart.js/auto';
+import { Chart as ChartComponent } from 'react-chartjs-2';
 import { Box, Divider, Paper, Typography } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import moment from 'moment';
 import { useTheme } from '@emotion/react';
 
-ChartJS.register(
-    LinearScale,
-    CategoryScale,
-    BarElement,
-    PointElement,
-    LineElement,
-    Legend,
-    Tooltip
-);
+Chart.register();
+//     LinearScale,
+//     CategoryScale,
+//     BarElement,
+//     PointElement,
+//     LineElement,
+//     Legend,
+//     Tooltip
+// );
 
 const defaultOptions = {
     responsive: true,
@@ -87,7 +78,7 @@ const BarChart = ({ options = defaultOptions, data = [], title, subtitle }) => {
                     },
                 }}
             >
-                <Chart
+                <ChartComponent
                     type="bar"
                     options={options}
                     data={{
