@@ -49,8 +49,8 @@ const EditStatistics = lazy(() => import('./pages/Statistics/EditStatistics'));
 function App() {
     return (
         <Routes>
-            <Route index element={<Home />} />
             <Route element={<PersistLogin />}>
+                <Route index element={<Home />} />
                 <Route path="/" element={<Layout />}>
                     <Route element={<RequireAuth />}>
                         <Route
