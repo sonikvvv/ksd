@@ -86,7 +86,8 @@ const UserCard = ({ user }) => {
                         align="center"
                         gutterBottom
                         sx={{
-                            whiteSpace: 'nowrap',
+                            width: '100%',
+                            whiteSpace: { xs: 'break-spaces', md: 'nowrap' },
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                         }}

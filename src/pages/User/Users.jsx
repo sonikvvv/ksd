@@ -69,7 +69,7 @@ const Users = () => {
             <Grid container spacing={3} mb={3}>
                 {users?.length !== 0 ? (
                     users?.map((user, index) => (
-                        <Grid item key={index} xs={12} sm={6} md={6} lg={4}>
+                        <Grid item key={index} xs={12} md={6} lg={4}>
                             <UserCard user={user} />
                         </Grid>
                     ))

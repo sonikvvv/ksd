@@ -37,7 +37,8 @@ const StatisticsCard = ({ data }) => {
                 <Typography
                     variant="h5"
                     sx={{
-                        whiteSpace: 'nowrap',
+                        width: '100%',
+                        whiteSpace: { xs: 'break-spaces', md: 'nowrap' },
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                     }}
