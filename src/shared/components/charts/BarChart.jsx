@@ -96,7 +96,7 @@ const BarChart = ({ options = defaultOptions, data = [], title, subtitle }) => {
                                 type: 'line',
                                 label: 'Old value',
                                 borderWidth: 2,
-                                fill: true,
+                                fill: false,
                                 data: barData?.map((item) => item?.oldValue),
                                 borderColor:
                                     theme.palette.mode === 'light'
